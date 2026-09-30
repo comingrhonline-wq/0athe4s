@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Processo Seletivo</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.header {
+    background: #d81b60;
+    padding: 22px 20px;
+    text-align: center;
+    color: white;
+}
+
+.profile {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    margin: 0 auto 10px;
+    display: block;
+    border: 3px solid rgba(255,255,255,.85);
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.sub {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #fce4ec;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 560px;
+    margin: 28px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 5px 22px rgba(0,0,0,.08);
+    margin-bottom: 18px;
+}
+
+/* =========================
+   TEXTOS
+========================= */
+
+.step {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+h2 {
+    font-size: 19px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 14px 0 4px;
+    color: #222;
+}
+
+.tag {
+    display: inline-block;
+    background: #eeeeee;
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    margin-top: 23px;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 9px 0;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 14px;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.document {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.document::before {
+    content: "☐";
+    font-size: 18px;
+    color: #777;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+button {
+    border: none;
+    border-radius: 9px;
+    padding: 14px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.primary {
+    background: #d81b60;
+    color: white;
+}
+
+.primary:hover {
+    background: #c2185b;
+}
+
+.secondary {
+    background: #e9e9e9;
+    color: #333;
+}
+
+.back {
+    background: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* =========================
+   AVISOS
+========================= */
+
+.notice {
+    background: #f7f7f7;
+    border-left: 4px solid #999;
+    padding: 14px;
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.warning {
+    background: #fce4ec;
+    border-left: 4px solid #d81b60;
+    padding: 14px;
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+   CURSOS
+========================= */
+
+.course {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+}
+
+.course-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.course-price {
+    color: #d81b60;
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* =========================
+   E-MAIL
+========================= */
+
+.email {
+    background: #f2f2f2;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 15px;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+/* =========================
+   INFORMAÇÕES DA EMPRESA
+========================= */
+
+.company-info {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.company-info p {
+    font-size: 12px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.company-info a {
+    color: #d81b60;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+   CONTROLE DE TELAS
+========================= */
+
+.hidden {
+    display: none;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+    text-align: center;
+    font-size: 11px;
+    color: #888;
+    padding: 10px 20px 30px;
+    line-height: 1.5;
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 500px) {
+
+    .card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .profile {
+        width: 62px;
+        height: 62px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ==================================================
+     CABEÇALHO
+     
+     PREENCHA:
+     Delboni 
+     FOTO DE PERFIL
+================================================== -->
+
+<header class="header">
+
+    <!-- https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2 -->
+    <!-- Exemplo:
+    <img class="profile"
+         src="https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2"
+         alt="Foto de perfil">
+    -->
+
+    <div class="brand">
+        Delboni medicina 
+    </div>
+
+    <div class="sub">
+        Processo Seletivo
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- ==================================================
+     ETAPA 1
+================================================== -->
+
+<section id="etapa1" class="card">
+
+    <div class="step">
+        Etapa 1 de 4
+    </div>
+
+    <h1>
+        Recepcionista de Consultório Médico
+    </h1>
+
+    <div class="price">
+        R$ 2.300,00
+    </div>
+
+    <span class="tag">
+        CLT
+    </span>
+
+    <span class="tag">
+        Período integral
+    </span>
+
+    <p class="subtitle" style="margin-top:14px;">
+        Local: Clínica próxima ao centro
+    </p>
+
+
+    <div class="section">
+
+        <div class="section-title">
+            Horário
+        </div>
+
+        <ul>
+
+            <li>
+                09h às 17h ou 12h às 20h
+            </li>
+
+            <li>
+                1 hora de intervalo
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section-title">
+            Benefícios
+        </div>
+
+        <ul>
+
+            <li>
+                Vale-alimentação — R$ 320,00
+            </li>
+
+            <li>
+                Vale-refeição — R$ 537,00
+            </li>
+
+            <li>
+                Plano médico
+            </li>
+
+            <li>
+                Vale-transporte conforme necessidade
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section-title">
+            Requisitos e documentação
+        </div>
+
+        <ul>
+
+            <li class="document">
+                RG e CPF ou CNH
+            </li>
+
+            <li class="document">
+                Comprovante de residência atualizado
+            </li>
+
+            <li class="document">
+                Carteira de Trabalho física ou digital
+            </li>
+
+            <li class="document">
+                Título de eleitor
+            </li>
+
+            <li class="document">
+                Certidão de nascimento, se aplicável
+            </li>
+
+            <li class="document">
+                Certificado de qualificação para
+                Recepcionista de Consultório Médico
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="notice">
+
+        Você possui a documentação necessária
+        para prosseguir?
+
+    </div>
+
+
+    <div class="buttons">
+
+        <button
+            class="primary"
+            onclick="mostrar('etapa2')">
+
+            SIM, POSSUO
+
+        </button>
+
+
+        <button
+            class="secondary"
+            onclick="mostrar('etapa3')">
+
+            NÃO POSSUO
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ETAPA 2
+================================================== -->
+
+<section id="etapa2" class="card hidden">
+
+    <div class="step">
+        Etapa 2 de 4
+    </div>
+
+
+    <h2>
+        Confirmação de documentação
+    </h2>
+
+
+    <p class="subtitle">
+
+        Você informou que possui a documentação
+        necessária para prosseguir.
+
+    </p>
+
+
+    <div class="section">
+
+        <div class="section-title">
+            Envio seguro da documentação
+        </div>
+
+
+        <p class="subtitle">
+
+            Os documentos deverão ser encaminhados
+            exclusivamente pelo canal oficial previamente
+            confirmado pela empresa.
+
+        </p>
+
+    </div>
+
+
+    <div class="warning">
+
+        <strong>Importante:</strong>
+
+        <br><br>
+
+        Não envie documentos pessoais para terceiros,
+        números particulares ou endereços que não tenham
+        sido confirmados como oficiais.
+
+    </div>
+
+
+    <button
+        class="primary"
+        style="margin-top:20px;"
+        onclick="consultarCanal()">
+
+        ENVIAR DOCUMENTAÇÃO
+
+    </button>
+
+
+    <button
+        class="back"
+        onclick="mostrar('etapa1')">
+
+        VOLTAR
+
+    </button>
+
+</section>
+
+
+
+<!-- ==================================================
+     ETAPA 3
+================================================== -->
+
+<section id="etapa3" class="card hidden">
+
+    <div class="step">
+        Etapa 3 de 4
+    </div>
+
+
+    <h2>
+        Qualificação profissional necessária
+    </h2>
+
+
+    <p class="subtitle">
+
+        Para esta função, pode ser exigida qualificação
+        compatível com as atividades de recepção
+        em ambiente clínico.
+
+    </p>
+
+
+    <div class="warning">
+
+        <strong>Importante:</strong>
+
+        <br><br>
+
+        Antes de realizar qualquer matrícula ou pagamento,
+        confirme pelo canal oficial se a vaga continua
+        disponível e se a qualificação é realmente
+        necessária para o seu processo.
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section-title">
+            Cursos disponíveis
+        </div>
+
+
+        <div class="course">
+
+            <div class="course-name">
+
+                Recepcionista de Consultório Médico
+                — Básico
+
+            </div>
+
+            <div class="course-price">
+                R$ 36,81
+            </div>
+
+        </div>
+
+
+        <div class="course">
+
+            <div class="course-name">
+
+                Recepcionista de Consultório Médico
+                — Completo
+
+            </div>
+
+            <div class="course-price">
+                R$ 78,36
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="primary"
+        style="margin-top:20px;"
+        onclick="mostrar('etapa4')">
+
+        CONSULTAR DISPONIBILIDADE DA VAGA
+
+    </button>
+
+
+    <button
+        class="back"
+        onclick="mostrar('etapa1')">
+
+        VOLTAR
+
+    </button>
+
+</section>
+
+
+
+<!-- ==================================================
+     ETAPA 4
+================================================== -->
+
+<section id="etapa4" class="card hidden">
+
+    <div class="step">
+        Etapa 4 de 4
+    </div>
+
+
+    <h2>
+        Consulta de disponibilidade
+    </h2>
+
+
+    <p class="subtitle">
+
+        Para continuar o processo seletivo,
+        confirme primeiro a disponibilidade atual
+        da oportunidade pelo canal oficial da empresa.
+
+    </p>
+
+
+    <div class="section">
+
+        <div class="section-title">
+
+            Canal oficial para confirmação
+
+        </div>
+
+
+        <div class="email">
+
+            seu-email-oficial@empresa.com.br
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        A confirmação da disponibilidade deve ocorrer
+        antes de qualquer matrícula ou pagamento
+        relacionado à qualificação.
+
+    </div>
+
+
+    <button
+        class="primary"
+        style="margin-top:20px;"
+        onclick="solicitarConfirmacao()">
+
+        ENVIAR SOLICITAÇÃO
+
+    </button>
+
+
+    <button
+        class="back"
+        onclick="mostrar('etapa3')">
+
+        VOLTAR
+
+    </button>
+
+</section>
+
+
+
+<!-- ==================================================
+     FINAL
+================================================== -->
+
+<section id="final" class="card hidden">
+
+    <div class="step">
+        Etapa 4 de 4
+    </div>
+
+
+    <h2>
+        Solicitação registrada
+    </h2>
+
+
+    <p class="subtitle">
+
+        Sua solicitação de confirmação foi preparada.
+        Aguarde a confirmação da disponibilidade da
+        oportunidade antes de realizar qualquer pagamento
+        ou matrícula.
+
+    </p>
+
+
+    <div class="notice">
+
+        Depois da confirmação da vaga e da necessidade
+        da qualificação, você poderá decidir se deseja
+        prosseguir.
+
+    </div>
+
+
+    <button
+        class="primary"
+        style="margin-top:20px;"
+        onclick="mostrar('etapa1')">
+
+        VOLTAR AO INÍCIO
+
+    </button>
+
+</section>
+
+
+<!-- ==================================================
+     DADOS DA EMPRESA
+     
+     PREENCHA SOMENTE COM DADOS AUTORIZADOS
+================================================== -->
+
+<section class="card">
+
+    <div class="company-info">
+
+        <p>
+            <strong>CNPJ:</strong>
+            45.796.554/0001-85.
+        </p>
+
+
+        <p>
+
+            <strong>Instagram:</strong>
+
+            <a href="https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2"
+               target="_blank">
+
+                https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2
+
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    Confirme sempre a autenticidade da oportunidade
+    e dos canais de contato antes de fornecer documentos
+    ou realizar pagamentos.
+
+</footer>
+
+
+
+<script>
+
+function esconderTodas() {
+
+    document
+        .querySelectorAll(".card")
+        .forEach(function(card) {
+
+            card.classList.add("hidden");
+
+        });
+
+}
+
+
+function mostrar(id) {
+
+    esconderTodas();
+
+    document
+        .getElementById(id)
+        .classList.remove("hidden");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+function consultarCanal() {
+
+    mostrar("etapa4");
+
+}
+
+
+function solicitarConfirmacao() {
+
+    mostrar("final");
+
+}
+
+</script>
+
+
+</body>
+</html>
