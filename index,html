@@ -4,914 +4,921 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Processo Seletivo</title>
+<title>Delboni Profissionalizante | Cursos Online</title>
 
 <style>
-
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f3f3f3;
+    background: #f7f7f7;
     color: #333;
-    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* =========================
-   CABEÇALHO
-========================= */
-
-.header {
-    background: #d81b60;
-    padding: 22px 20px;
-    text-align: center;
-    color: white;
+header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 18px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.profile {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: white;
-    margin: 0 auto 10px;
+.nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: #d81b60;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
     display: block;
-    border: 3px solid rgba(255,255,255,.85);
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 2px;
 }
 
-.brand {
-    font-size: 21px;
-    font-weight: 700;
-    letter-spacing: .3px;
+.nav a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
 }
 
-.sub {
-    margin-top: 5px;
-    font-size: 13px;
-    color: #fce4ec;
+.nav a:hover {
+    color: #d81b60;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-    max-width: 560px;
-    margin: 28px auto;
-    padding: 0 16px;
+.hero {
+    background: linear-gradient(135deg, #d81b60, #ad1457);
+    color: white;
+    padding: 80px 6%;
 }
 
-.card {
-    background: white;
-    border-radius: 14px;
-    padding: 25px;
-    box-shadow: 0 5px 22px rgba(0,0,0,.08);
+.hero-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 44px;
     margin-bottom: 18px;
 }
 
-/* =========================
-   TEXTOS
-========================= */
-
-.step {
-    font-size: 12px;
-    color: #888;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 8px;
-    color: #222;
-}
-
-h2 {
-    font-size: 19px;
-    margin-bottom: 12px;
-    color: #222;
-}
-
-.subtitle {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.price {
-    font-size: 27px;
-    font-weight: bold;
-    margin: 14px 0 4px;
-    color: #222;
-}
-
-.tag {
-    display: inline-block;
-    background: #eeeeee;
-    border-radius: 20px;
-    padding: 6px 11px;
-    font-size: 12px;
-    margin-right: 5px;
-}
-
-/* =========================
-   SEÇÕES
-========================= */
-
-.section {
-    margin-top: 23px;
-}
-
-.section-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: #333;
-}
-
-ul {
-    list-style: none;
-}
-
-li {
-    padding: 9px 0;
-    border-bottom: 1px solid #eeeeee;
-    font-size: 14px;
-}
-
-li:last-child {
-    border-bottom: none;
-}
-
-.document {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.document::before {
-    content: "☐";
+.hero p {
+    max-width: 720px;
     font-size: 18px;
-    color: #777;
+    margin-bottom: 30px;
 }
 
-/* =========================
-   BOTÕES
-========================= */
-
-.buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 22px;
-}
-
-button {
-    border: none;
-    border-radius: 9px;
-    padding: 14px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-}
-
-.primary {
-    background: #d81b60;
-    color: white;
-}
-
-.primary:hover {
-    background: #c2185b;
-}
-
-.secondary {
-    background: #e9e9e9;
-    color: #333;
-}
-
-.back {
-    background: transparent;
-    color: #666;
-    border: 1px solid #ddd;
-    margin-top: 10px;
-}
-
-/* =========================
-   AVISOS
-========================= */
-
-.notice {
-    background: #f7f7f7;
-    border-left: 4px solid #999;
-    padding: 14px;
-    margin-top: 18px;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-.warning {
-    background: #fce4ec;
-    border-left: 4px solid #d81b60;
-    padding: 14px;
-    margin-top: 18px;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-/* =========================
-   CURSOS
-========================= */
-
-.course {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 12px;
-}
-
-.course-name {
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.course-price {
+.btn {
+    display: inline-block;
+    background: white;
     color: #d81b60;
-    font-size: 21px;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-/* =========================
-   E-MAIL
-========================= */
-
-.email {
-    background: #f2f2f2;
+    padding: 14px 25px;
     border-radius: 8px;
-    padding: 14px;
-    margin-top: 15px;
-    font-size: 14px;
-    word-break: break-word;
-}
-
-/* =========================
-   INFORMAÇÕES DA EMPRESA
-========================= */
-
-.company-info {
-    margin-top: 18px;
-    padding-top: 16px;
-    border-top: 1px solid #eee;
-    text-align: center;
-}
-
-.company-info p {
-    font-size: 12px;
-    color: #777;
-    margin: 5px 0;
-}
-
-.company-info a {
-    color: #d81b60;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* =========================
-   CONTROLE DE TELAS
-========================= */
-
-.hidden {
-    display: none;
+.btn:hover {
+    opacity: .9;
 }
 
-/* =========================
-   RODAPÉ
-========================= */
+section {
+    padding: 60px 6%;
+}
 
-.footer {
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
     text-align: center;
-    font-size: 11px;
-    color: #888;
-    padding: 10px 20px 30px;
-    line-height: 1.5;
+    margin-bottom: 40px;
 }
 
-/* =========================
-   CELULAR
-========================= */
+.section-title h2 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-@media (max-width: 500px) {
+.section-title p {
+    color: #777;
+}
 
-    .card {
-        padding: 20px;
-    }
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 22px;
+}
 
-    h1 {
-        font-size: 21px;
-    }
+.course {
+    background: white;
+    border: 1px solid #e4e4e4;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    transition: .2s;
+}
 
-    .buttons {
+.course:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.09);
+}
+
+.course h3 {
+    color: #d81b60;
+    margin-bottom: 12px;
+}
+
+.course p {
+    color: #666;
+    margin-bottom: 18px;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+}
+
+.price small {
+    display: block;
+    font-size: 13px;
+    color: #888;
+    font-weight: normal;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.step {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #d81b60;
+}
+
+.step strong {
+    display: block;
+    color: #d81b60;
+    margin-bottom: 8px;
+}
+
+.info {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #ddd;
+}
+
+.info ul {
+    margin-left: 20px;
+}
+
+.info li {
+    margin-bottom: 8px;
+}
+
+.form-area {
+    background: #eeeeee;
+}
+
+form {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.07);
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #444;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #d81b60;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ad1457;
+}
+
+.notice {
+    background: #fff4f8;
+    border-left: 4px solid #d81b60;
+    padding: 18px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 35px 6%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+footer p {
+    margin: 6px 0;
+    color: #ddd;
+}
+
+footer a {
+    color: #ff80ab;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+
+    .nav {
         flex-direction: column;
     }
 
-    .profile {
-        width: 62px;
-        height: 62px;
+    .nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+    form {
+        padding: 25px;
     }
 }
-
 </style>
 </head>
 
 <body>
 
+<header>
+    <div class="nav">
 
-<!-- ==================================================
-     CABEÇALHO
-     
-     PREENCHA:
-     Delboni 
-     FOTO DE PERFIL
-================================================== -->
+        <div class="logo">
+            Delboni Profissionalizante
+            <span>CURSOS ONLINE</span>
+        </div>
 
-<header class="header">
+        <nav>
+            <a href="#cursos">Cursos</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#matricula">Matrícula</a>
+        </nav>
 
-    <!-- https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2 -->
-    <!-- Exemplo:
-    <img class="profile"
-         src="https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2"
-         alt="Foto de perfil">
-    -->
-
-    <div class="brand">
-        Delboni medicina 
     </div>
-
-    <div class="sub">
-        Processo Seletivo
-    </div>
-
 </header>
 
 
-<main class="container">
+<section class="hero">
 
+    <div class="hero-content">
 
-<!-- ==================================================
-     ETAPA 1
-================================================== -->
-
-<section id="etapa1" class="card">
-
-    <div class="step">
-        Etapa 1 de 4
-    </div>
-
-    <h1>
-        Recepcionista de Consultório Médico
-    </h1>
-
-    <div class="price">
-        R$ 2.300,00
-    </div>
-
-    <span class="tag">
-        CLT
-    </span>
-
-    <span class="tag">
-        Período integral
-    </span>
-
-    <p class="subtitle" style="margin-top:14px;">
-        Local: Clínica próxima ao centro
-    </p>
-
-
-    <div class="section">
-
-        <div class="section-title">
-            Horário
-        </div>
-
-        <ul>
-
-            <li>
-                09h às 17h ou 12h às 20h
-            </li>
-
-            <li>
-                1 hora de intervalo
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div class="section">
-
-        <div class="section-title">
-            Benefícios
-        </div>
-
-        <ul>
-
-            <li>
-                Vale-alimentação — R$ 320,00
-            </li>
-
-            <li>
-                Vale-refeição — R$ 537,00
-            </li>
-
-            <li>
-                Plano médico
-            </li>
-
-            <li>
-                Vale-transporte conforme necessidade
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div class="section">
-
-        <div class="section-title">
-            Requisitos e documentação
-        </div>
-
-        <ul>
-
-            <li class="document">
-                RG e CPF ou CNH
-            </li>
-
-            <li class="document">
-                Comprovante de residência atualizado
-            </li>
-
-            <li class="document">
-                Carteira de Trabalho física ou digital
-            </li>
-
-            <li class="document">
-                Título de eleitor
-            </li>
-
-            <li class="document">
-                Certidão de nascimento, se aplicável
-            </li>
-
-            <li class="document">
-                Certificado de qualificação para
-                Recepcionista de Consultório Médico
-            </li>
-
-        </ul>
-
-    </div>
-
-
-    <div class="notice">
-
-        Você possui a documentação necessária
-        para prosseguir?
-
-    </div>
-
-
-    <div class="buttons">
-
-        <button
-            class="primary"
-            onclick="mostrar('etapa2')">
-
-            SIM, POSSUO
-
-        </button>
-
-
-        <button
-            class="secondary"
-            onclick="mostrar('etapa3')">
-
-            NÃO POSSUO
-
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     ETAPA 2
-================================================== -->
-
-<section id="etapa2" class="card hidden">
-
-    <div class="step">
-        Etapa 2 de 4
-    </div>
-
-
-    <h2>
-        Confirmação de documentação
-    </h2>
-
-
-    <p class="subtitle">
-
-        Você informou que possui a documentação
-        necessária para prosseguir.
-
-    </p>
-
-
-    <div class="section">
-
-        <div class="section-title">
-            Envio seguro da documentação
-        </div>
-
-
-        <p class="subtitle">
-
-            Os documentos deverão ser encaminhados
-            exclusivamente pelo canal oficial previamente
-            confirmado pela empresa.
-
-        </p>
-
-    </div>
-
-
-    <div class="warning">
-
-        <strong>Importante:</strong>
-
-        <br><br>
-
-        Não envie documentos pessoais para terceiros,
-        números particulares ou endereços que não tenham
-        sido confirmados como oficiais.
-
-    </div>
-
-
-    <button
-        class="primary"
-        style="margin-top:20px;"
-        onclick="consultarCanal()">
-
-        ENVIAR DOCUMENTAÇÃO
-
-    </button>
-
-
-    <button
-        class="back"
-        onclick="mostrar('etapa1')">
-
-        VOLTAR
-
-    </button>
-
-</section>
-
-
-
-<!-- ==================================================
-     ETAPA 3
-================================================== -->
-
-<section id="etapa3" class="card hidden">
-
-    <div class="step">
-        Etapa 2 de 4
-    </div>
-
-
-    <h2>
-        Qualificação profissional necessária
-    </h2>
-
-
-    <p class="subtitle">
-
-        Para esta função, pode ser exigida qualificação
-        compatível com as atividades de recepção
-        em ambiente clínico.
-
-    </p>
-
-
-    <div class="warning">
-
-        <strong>Importante:</strong>
-
-        <br><br>
-
-        Antes de realizar qualquer matrícula ou pagamento,
-        confirme pelo canal oficial se a vaga continua
-        disponível e se a qualificação é realmente
-        necessária para o seu processo.
-
-    </div>
-
-
-    <div class="section">
-
-        <div class="section-title">
-            Cursos disponíveis
-        </div>
-
-
-        <div class="course">
-
-            <div class="course-name">
-
-                Recepcionista de Consultório Médico
-                — Básico
-
-            </div>
-
-            <div class="course-price">
-                R$ 36,81
-            </div>
-
-        </div>
-
-
-        <div class="course">
-
-            <div class="course-name">
-
-                Recepcionista de Consultório Médico
-                — Completo
-
-            </div>
-
-            <div class="course-price">
-                R$ 78,36
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <button
-        class="primary"
-        style="margin-top:20px;"
-        onclick="mostrar('etapa4')">
-
-        CONSULTAR DISPONIBILIDADE DA VAGA
-
-    </button>
-
-
-    <button
-        class="back"
-        onclick="mostrar('etapa1')">
-
-        VOLTAR
-
-    </button>
-
-</section>
-
-
-
-<!-- ==================================================
-     ETAPA 4
-================================================== -->
-
-<section id="etapa4" class="card hidden">
-
-    <div class="step">
-        Etapa 3 de 4
-    </div>
-
-
-    <h2>
-        Consulta de disponibilidade
-    </h2>
-
-
-    <p class="subtitle">
-
-        Para continuar o processo seletivo,
-        confirme primeiro a disponibilidade atual
-        da oportunidade pelo canal oficial da empresa.
-
-    </p>
-
-
-    <div class="section">
-
-        <div class="section-title">
-
-            Canal oficial para confirmação
-
-        </div>
-
-
-        <div class="email">
-
-            seu-email-oficial@empresa.com.br
-
-        </div>
-
-    </div>
-
-
-    <div class="notice">
-
-        A confirmação da disponibilidade deve ocorrer
-        antes de qualquer matrícula ou pagamento
-        relacionado à qualificação.
-
-    </div>
-
-
-    <button
-        class="primary"
-        style="margin-top:20px;"
-        onclick="solicitarConfirmacao()">
-
-        ENVIAR SOLICITAÇÃO
-
-    </button>
-
-
-    <button
-        class="back"
-        onclick="mostrar('etapa3')">
-
-        VOLTAR
-
-    </button>
-
-</section>
-
-
-
-<!-- ==================================================
-     FINAL
-================================================== -->
-
-<section id="final" class="card hidden">
-
-    <div class="step">
-        Etapa 4 de 4
-    </div>
-
-
-    <h2>
-        Solicitação registrada
-    </h2>
-
-
-    <p class="subtitle">
-
-        Sua solicitação de confirmação foi preparada.
-        Aguarde a confirmação da disponibilidade da
-        oportunidade antes de realizar qualquer pagamento
-        ou matrícula.
-
-    </p>
-
-
-    <div class="notice">
-
-        Depois da confirmação da vaga e da necessidade
-        da qualificação, você poderá decidir se deseja
-        prosseguir.
-
-    </div>
-
-
-    <button
-        class="primary"
-        style="margin-top:20px;"
-        onclick="mostrar('etapa1')">
-
-        VOLTAR AO INÍCIO
-
-    </button>
-
-</section>
-
-
-<!-- ==================================================
-     DADOS DA EMPRESA
-     
-     PREENCHA SOMENTE COM DADOS AUTORIZADOS
-================================================== -->
-
-<section class="card">
-
-    <div class="company-info">
+        <h1>Qualifique-se de onde estiver.</h1>
 
         <p>
-            <strong>CNPJ:</strong>
-            45.796.554/0001-85.
+            Cursos profissionalizantes completamente on-line,
+            com acesso pelo site e possibilidade de realização
+            dos estudos no conforto da sua casa.
         </p>
 
+        <a href="#cursos" class="btn">
+            Ver cursos
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="cursos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Nossos cursos</h2>
+
+            <p>
+                Escolha o curso e a modalidade que deseja realizar.
+            </p>
+
+        </div>
+
+
+        <div class="courses">
+
+
+            <div class="course">
+
+                <h3>Recepcionista de Consultório Médico</h3>
+
+                <p>
+                    Formação voltada para atendimento,
+                    recepção e rotina administrativa em
+                    consultórios e ambientes de saúde.
+                </p>
+
+                <div class="price">
+                    R$ 37,80
+                    <small>Modalidade Básico</small>
+                </div>
+
+                <br>
+
+                <div class="price">
+                    R$ 86,42
+                    <small>Modalidade Completo</small>
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>Auxiliar Administrativo</h3>
+
+                <p>
+                    Conteúdos relacionados às rotinas
+                    administrativas, organização e atendimento.
+                </p>
+
+                <div class="price">
+                    R$ 37,80
+                    <small>Modalidade Básico</small>
+                </div>
+
+                <br>
+
+                <div class="price">
+                    R$ 86,42
+                    <small>Modalidade Completo</small>
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>Balconista de Farmácia</h3>
+
+                <p>
+                    Formação voltada para conhecimentos
+                    relacionados ao atendimento e rotina
+                    de estabelecimentos farmacêuticos.
+                </p>
+
+                <div class="price">
+                    R$ 37,80
+                    <small>Modalidade Básico</small>
+                </div>
+
+                <br>
+
+                <div class="price">
+                    R$ 86,42
+                    <small>Modalidade Completo</small>
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>Auxiliar de Pet Shop</h3>
+
+                <p>
+                    Curso direcionado às rotinas de atendimento,
+                    organização e apoio em pet shops.
+                </p>
+
+                <div class="price">
+                    R$ 37,80
+                    <small>Valor do curso</small>
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>Banho e Tosa</h3>
+
+                <p>
+                    Formação voltada para conhecimentos
+                    relacionados aos cuidados de higiene
+                    e estética animal.
+                </p>
+
+                <div class="price">
+                    R$ 37,80
+                    <small>Valor do curso</small>
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>Banho e Tosa + Auxiliar de Pet Shop</h3>
+
+                <p>
+                    Formação combinada para quem deseja
+                    estudar as duas áreas.
+                </p>
+
+                <div class="price">
+                    R$ 86,42
+                    <small>Modalidade Completa</small>
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>Porteiro</h3>
+
+                <p>
+                    Formação voltada para rotinas de portaria,
+                    controle de acesso e atendimento.
+                </p>
+
+                <div class="price">
+                    R$ 37,80
+                    <small>Modalidade Básico</small>
+                </div>
+
+                <br>
+
+                <div class="price">
+                    R$ 86,42
+                    <small>Modalidade Completo</small>
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>Secretariado</h3>
+
+                <p>
+                    Formação relacionada à organização,
+                    atendimento, documentos e rotinas
+                    administrativas.
+                </p>
+
+                <div class="price">
+                    R$ 37,80
+                    <small>Modalidade Básico</small>
+                </div>
+
+                <br>
+
+                <div class="price">
+                    R$ 86,42
+                    <small>Modalidade Completo</small>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="como-funciona">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Como funciona</h2>
+
+            <p>
+                Processo simples para iniciar sua formação.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <strong>01 — Escolha seu curso</strong>
+
+                Selecione o curso e a modalidade desejada.
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>02 — Solicite sua matrícula</strong>
+
+                Preencha o formulário com seus dados
+                pessoais e informações do curso.
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>03 — Pagamento</strong>
+
+                Envie a solicitação de matrícula e siga
+                as orientações recebidas.
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>04 — Acesso ao curso</strong>
+
+                Após a confirmação, as orientações de
+                acesso serão encaminhadas.
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>05 — Conclusão</strong>
+
+                Após concluir o curso, o certificado
+                será disponibilizado conforme as regras
+                aplicáveis à formação contratada.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Informações importantes</h2>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="notice">
+
+                <strong>Formação totalmente on-line</strong>
+
+                <br>
+
+                Os cursos são realizados pela internet,
+                permitindo que o aluno estude de onde estiver.
+
+            </div>
+
+
+            <p>
+                Conforme as informações fornecidas para esta
+                página, os cursos são apresentados como formação
+                profissionalizante on-line e relacionados às
+                seguintes referências legais:
+            </p>
+
+            <br>
+
+            <ul>
+
+                <li>
+                    Lei nº 9.394/96
+                </li>
+
+                <li>
+                    Decreto Presidencial nº 5.154/2004
+                </li>
+
+                <li>
+                    Resolução CNE/CEB nº 04/99
+                </li>
+
+            </ul>
+
+            <br>
+
+            <p>
+                Para matrícula, serão solicitadas informações
+                como nome completo, e-mail pessoal e comprovante
+                de pagamento.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="matricula" class="form-area">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Solicite sua matrícula</h2>
+
+            <p>
+                Preencha os dados abaixo para enviar sua
+                solicitação à equipe.
+            </p>
+
+        </div>
+
+
+        <form
+            action="https://formsubmit.co/Delboni.rh@gmail.com"
+            method="POST"
+        >
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="Nova solicitação de matrícula — Delboni Profissionalizante"
+            >
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table"
+            >
+
+            <input
+                type="hidden"
+                name="_captcha"
+                value="true"
+            >
+
+            <input
+                type="hidden"
+                name="_autoresponse"
+                value="Recebemos sua solicitação de matrícula na Delboni Profissionalizante. Nossa equipe irá analisar as informações e entrar em contato com as próximas orientações."
+            >
+
+            <input
+                type="hidden"
+                name="_next"
+                value="https://formsubmit.co/thanks"
+            >
+
+
+            <label for="nome">
+                Nome completo
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                name="Nome completo"
+                placeholder="Digite seu nome completo"
+                required
+            >
+
+
+            <label for="email">
+                E-mail pessoal
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="E-mail"
+                placeholder="seuemail@exemplo.com"
+                required
+            >
+
+
+            <label for="curso">
+                Curso
+            </label>
+
+            <select
+                id="curso"
+                name="Curso"
+                required
+            >
+
+                <option value="">
+                    Selecione um curso
+                </option>
+
+                <option>
+                    Recepcionista de Consultório Médico
+                </option>
+
+                <option>
+                    Auxiliar Administrativo
+                </option>
+
+                <option>
+                    Balconista de Farmácia
+                </option>
+
+                <option>
+                    Auxiliar de Pet Shop
+                </option>
+
+                <option>
+                    Banho e Tosa
+                </option>
+
+                <option>
+                    Banho e Tosa + Auxiliar de Pet Shop
+                </option>
+
+                <option>
+                    Porteiro
+                </option>
+
+                <option>
+                    Secretariado
+                </option>
+
+            </select>
+
+
+            <label for="modalidade">
+                Modalidade
+            </label>
+
+            <select
+                id="modalidade"
+                name="Modalidade"
+                required
+            >
+
+                <option value="">
+                    Selecione
+                </option>
+
+                <option>
+                    Básico — R$ 37,80
+                </option>
+
+                <option>
+                    Completo — R$ 86,42
+                </option>
+
+            </select>
+
+
+            <label for="telefone">
+                Telefone / WhatsApp
+            </label>
+
+            <input
+                type="tel"
+                id="telefone"
+                name="Telefone / WhatsApp"
+                placeholder="(00) 00000-0000"
+            >
+
+
+            <label for="mensagem">
+                Mensagem
+            </label>
+
+            <textarea
+                id="mensagem"
+                name="Mensagem"
+                placeholder="Digite uma mensagem, se necessário."
+            ></textarea>
+
+
+            <button type="submit">
+                ENVIAR SOLICITAÇÃO DE MATRÍCULA
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <h3>
+            Delboni Profissionalizante
+        </h3>
 
         <p>
+            Cursos profissionalizantes on-line
+        </p>
 
-            <strong>Instagram:</strong>
+        <p>
+            CNPJ: 45.796.554/0001-85
+        </p>
 
-            <a href="https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2"
-               target="_blank">
-
-                https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2
-
+        <p>
+            E-mail:
+            <a href="mailto:Delboni.rh@gmail.com">
+                Delboni.rh@gmail.com
             </a>
+        </p>
 
+        <p>
+            Instagram:
+            <a
+                href="https://www.instagram.com/delbonimedicinadiagnostica?stkn=enJvbDY4M2UweTZ2"
+                target="_blank"
+            >
+                @delbonimedicinadiagnostica
+            </a>
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Delboni Profissionalizante.
+            Todos os direitos reservados.
         </p>
 
     </div>
-
-</section>
-
-
-</main>
-
-
-<footer class="footer">
-
-    Confirme sempre a autenticidade da oportunidade
-    e dos canais de contato antes de fornecer documentos
-    ou realizar pagamentos.
 
 </footer>
-
-
-
-<script>
-
-function esconderTodas() {
-
-    document
-        .querySelectorAll(".card")
-        .forEach(function(card) {
-
-            card.classList.add("hidden");
-
-        });
-
-}
-
-
-function mostrar(id) {
-
-    esconderTodas();
-
-    document
-        .getElementById(id)
-        .classList.remove("hidden");
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-}
-
-
-function consultarCanal() {
-
-    mostrar("etapa4");
-
-    document
-        .querySelector("#etapa4 .step")
-        .innerText = "Confirmação do canal oficial";
-
-}
-
-
-function solicitarConfirmacao() {
-
-    mostrar("final");
-
-}
-
-</script>
-
 
 </body>
 </html>
